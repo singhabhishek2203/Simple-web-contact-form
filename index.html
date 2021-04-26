@@ -7,10 +7,20 @@
     <title>Contact-form</title>
     <link rel="stylesheet" href="./style.css">
     <script>
-        function showMessage(){
-            alert("Thank You! Your form has been submitted.")
+        function results(){
+            var username = document.getElementById('username').value
+            var email = document.getElementById('email').value
+            var issue = document.getElementById('issue').value
+            var comment = document.getElementById('comment').value
+
+            document.write("<h1>Thank You !</h1>")
+            document.write("<h2>The following data has been submitted:<h2>")
+            document.write("Your Name: "+username+"<br>")
+            document.write("Your Email: "+email+"<br>")
+            document.write("Your issue type: "+issue+"<br>")
+            document.write("Your message: "+comment+"<br>")
         }
-    </script>
+        </script>
 </head>
 <body>
 <section>
@@ -18,11 +28,11 @@
         <h1>Simple Web Contact Form</h1>
     </div>
     <div class="content-box">
-        <form action="">
+        <form onsubmit="return results();" method="post" mailto:my@site.com>
             <label for="username">Username</label>
-            <input type="text" value="" placeholder="Enter your username here" required>
+            <input type="text" id="username" required>
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email here" required>
+            <input type="email" name="email" id="email" required>
             <label for="issue">Select an issue</label>
             <select name="issue" id="issue" required >
                 <option value="query">Query</option>
@@ -32,7 +42,7 @@
             </select>
             <label for="comment">Message</label>
             <textarea name="comment" id="comment" cols="40" rows="10" placeholder="Enter message here" required></textarea>
-            <button type="submit" onclick="showMessage()">Submit</button>
+            <button type="submit">Submit</button>
         </form>
     </div>
 </section>
