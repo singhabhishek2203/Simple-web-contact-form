@@ -1,27 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-form</title>
     <link rel="stylesheet" href="./style.css">
-    <title>SWCF</title>
+    <script>
+        function showMessage(){
+            alert("Thank You! Your form has been submitted.")
+        }
+    </script>
 </head>
-
 <body>
-    <div class="contact-form">
-        <div class="content">
-            <div class="cfhead">
-                <h1>CONTACT FORM</h1>
-            </div>
-            <form action="">
-                <input type="text" placeholder="Username">
-                <input type="text" placeholder="Email">
-                <input type="text" placeholder="Create a Password">
-            </form>
-        </div>
+<section>
+    <div class="s1">
+        <h1>Simple Web Contact Form</h1>
     </div>
-</body>
+    <div class="content-box">
+        <form action="">
+            <label for="username">Username</label>
+            <input type="text" value="username" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+            <label for="issue">Select an issue</label>
+            <select name="issue" id="issue" required >
+                <option value="query">Query</option>
+                <option value="Feedback">Feedback</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Other">Other</option>
+            </select>
+            <label for="comment">Message</label>
+            <textarea name="comment" id="comment" cols="40" rows="10" placeholder="Enter message here" required></textarea>
+            <button type="submit" onclick="showMessage()">Submit</button>
+        </form>
+    </div>
+</section>
 
 </html>
